@@ -48,7 +48,7 @@ const deletePosts = async (req, res) => {
 
 const changePosts = async (req, res) => {
   const { id } = req.params;
-  const { titulo, img, descripcion, likes } = req.query;
+  const { titulo, img, descripcion, likes } = req.body;
   try {
     const { rows } = await pool.query("SELECT * FROM posts WHERE id = $1;", [id]);
     const postActual = rows[0];
@@ -56,18 +56,20 @@ const changePosts = async (req, res) => {
     if (!postActual) {
       return res.status(404).send("Post no encontrado en la base de datos");
     }
-    const nuevoTitulo = titulo || postActual.titulo;
-    const nuevaImg = img || postActual.img;
-    const nuevaDescripcion = descripcion || postActual.descripcion;
-    const nuevosLikes = likes !== undefined ? likes : postActual.likes;
+
+    const newTitle = titulo !== undefined ? titulo : postActual.titulo;
+    const newImg = img !== undefined ? img : postActual.img;
+    const newDescription = descripcion !== undefined ? descripcion : postActual.descripcion;
+    const newLikes = likes !== undefined ? likes : postActual.likes;
 
     const consulta = "UPDATE posts SET titulo = $1, img = $2, descripcion = $3, likes = $4 WHERE id = $5;";
 
-    const values = [nuevoTitulo, nuevaImg, nuevaDescripcion, nuevosLikes, id];
+    const values = [newTitle, newImg, newDescription, newLikes, id];
     await pool.query(consulta, values);
     res.send("Post modificado con éxito");
   } catch (error) {
-    res.status(500).send("Error al modificar post");
+    console.error("Error al modificar el post:", error);
+    res.status(500).send("Error al modificar el post");
   }
 };
 
