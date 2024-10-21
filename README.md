@@ -67,7 +67,7 @@ nodemon app.js
 ```
 
 ### Frontend
-### Dependencias utilizadas en el frontend
+#### Dependencias utilizadas en el frontend
 
 ```json
   "dependencies": {
