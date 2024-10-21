@@ -21,6 +21,22 @@
 npm i express dotenv cors nodemon pg uuid
 ```
 
+#### Estructura de .env
+
+```makefile
+# Puerto del servidor
+PORT=3000
+
+# Configuración de la Base de Datos
+
+PG_HOST=localhost
+PG_USER=XXXX
+PG_PASSWORD=XXXX
+PG_PORT=5432
+PG_DATABASE=likeme2
+ALLOW_EXIT_ON_IDLE=true
+```
+
 #### Creación de la Base de datos
 
 ```sql
