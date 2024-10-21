@@ -2,7 +2,7 @@
 ## Julio Olivares
 
 
-### Dependencias utilizadas en el Backend
+### Dependencias utilizadas en el backend
 
 ```json
   "dependencies": {
@@ -15,13 +15,13 @@
   }
 ```
 
-### Uso de dependencias
+#### Instalación de dependencias
 
 ```bash
 npm i express dotenv cors nodemon pg uuid
 ```
 
-### Creación de la Base de datos
+#### Creación de la Base de datos
 
 ```sql
 -- crear database
@@ -44,3 +44,38 @@ CREATE TABLE posts (
 
 ```
 
+#### Encender Servidor
+
+```bash
+nodemon app.js
+```
+
+### Dependencias utilizadas en el frontend
+
+```json
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-toastify": "^9.1.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite": "^4.1.0"
+  }
+  ```
+#### Instalación de dependencias
+
+```bash
+npm i
+```
+#### Visualizar app
+
+```bash
+npm run dev
+```
+
+##### Librerías Externas
+
+- [react-toastify](https://www.npmjs.com/package/react-toastify)
