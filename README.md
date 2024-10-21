@@ -1,8 +1,8 @@
 # Desafío Like Me parte II
 ## Julio Olivares
 
-
-### Dependencias utilizadas en el backend
+### Backend
+#### Dependencias utilizadas en el backend
 
 ```json
   "dependencies": {
@@ -66,6 +66,7 @@ CREATE TABLE posts (
 nodemon app.js
 ```
 
+### Frontend
 ### Dependencias utilizadas en el frontend
 
 ```json
